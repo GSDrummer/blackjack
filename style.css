@@ -1,0 +1,25 @@
+body{
+    margin: 0;
+    background-color: rgb(192, 186, 186);
+}
+
+.box{
+    padding-top: 150px;
+    display: grid;
+    grid-template-columns: repeat(1, 200px);
+    justify-content: center;
+    gap:.5rem;
+}
+
+.text{
+    padding-top: 25px;
+    padding-bottom: 25px;
+    justify-content: center;
+    align-items: center;
+    font-family: Verdana,Tahoma, sans-serif;
+}
+
+.buttonsCont{
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
