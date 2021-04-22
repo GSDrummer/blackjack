@@ -79,7 +79,7 @@ function stand(){
         if(getHandTotal(dealerHand) > 21){
             document.getElementById("dealerHand").innerHTML = `Dealers Hand: ${dealerHand}`;
             document.getElementById("dealerTotal").innerHTML = `Dealer Total:  ${getHandTotal(dealerHand)}`;
-            alert(`Dealer Bust!`)
+            alert(`Dealer Bust! You Win!`)
             document.getElementById("playAgain").innerHTML = `Press Deal to Play Again!`;
         }
     }   
