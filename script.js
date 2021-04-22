@@ -13,6 +13,7 @@ function drawCards(deck){
 }
 
 function startGame(){
+    document.getElementById("playAgain").innerHTML = ``;
     playerHand = [drawCards(deck), drawCards(deck)]
     dealerHand = [drawCards(deck), drawCards(deck)]
     document.getElementById("dealerHand").innerHTML = `Dealers Hand: ${dealerHand}`;
@@ -36,6 +37,7 @@ function hit(){
         document.getElementById("playerHand").innerHTML = `Players Hand: ${playerHand}`;
         document.getElementById("playerTotal").innerHTML = `Player Total:  ${getHandTotal(playerHand)}`;;
         alert("Bust! You Lose!");
+        document.getElementById("playAgain").innerHTML = `Press Deal to Play Again!`;
     }else{
         document.getElementById("playerHand").innerHTML = `Players Hand: ${playerHand}`;
         document.getElementById("playerTotal").innerHTML = `Player Total:  ${getHandTotal(playerHand)}`;
@@ -47,6 +49,7 @@ function hit(){
 function stand(){
     if (getHandTotal(dealerHand) > 17 && getHandTotal(dealerHand) > getHandTotal(playerHand)){
         alert("Dealer wins!")
+        document.getElementById("playAgain").innerHTML = `Press Deal to Play Again!`;
     }
     else if(getHandTotal(dealerHand) < 17){
         dealerHand.push(drawCards(deck))
@@ -56,13 +59,16 @@ function stand(){
         document.getElementById("dealerTotal").innerHTML = `Dealer Total:  ${getHandTotal(dealerHand)}`;
         if(getHandTotal(dealerHand) > 21){
             alert("Dealer Bust!")
+            document.getElementById("playAgain").innerHTML = `Press Deal to Play Again!`;
         }
     }
     else if (getHandTotal(dealerHand) > 17 && getHandTotal(dealerHand) === getHandTotal(playerHand)){
         alert("It's a Tie!")
+        document.getElementById("playAgain").innerHTML = `Press Deal to Play Again!`;
     }
     else if(getHandTotal(playerHand) === 21){
         alert("You Win!")
+        document.getElementById("playAgain").innerHTML = `Press Deal to Play Again!`;
     }
     else{
         dealerHand.push(drawCards(deck))
@@ -74,6 +80,7 @@ function stand(){
             document.getElementById("dealerHand").innerHTML = `Dealers Hand: ${dealerHand}`;
             document.getElementById("dealerTotal").innerHTML = `Dealer Total:  ${getHandTotal(dealerHand)}`;
             alert(`Dealer Bust!`)
+            document.getElementById("playAgain").innerHTML = `Press Deal to Play Again!`;
         }
     }   
 }
